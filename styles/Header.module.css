@@ -1,0 +1,60 @@
+.header {
+    padding: 5rem 0;
+    background-image: linear-gradient( to right, rgb(0 0 0 / .8), rgb( 0 0 0 / .7) ), url(../public/img/header.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navegacion {
+    margin-top: 4rem;
+    display: flex;
+}
+.navlist{
+    display: flex;
+    gap: 2rem;
+}
+.navegacion a {
+    display: inline-block;
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    opacity: .7;
+    transition: opacity 0.3s ease;
+    padding: 0.2rem 0.3rem;
+}
+
+.navegacion a:hover {
+    opacity: 1;
+}
+
+.navegacion .activeLink a {
+    opacity: 1;
+    background-color: var(--primary);
+}
+
+@media screen and ( min-width: 500px ) { 
+    .navegacion a {
+        font-size: 1.6rem;
+        padding: 0.4rem 1rem;
+     }
+}
+
+@media screen and ( min-width: 768px ) {
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navegacion {
+        margin-top: 0;
+    }
+}
