@@ -9,8 +9,9 @@ const Blog = ({ entradas }) => {
             <main className={`contenedor ${ styles.blog_main }`}>
                 <h2 className='heading'>Blog</h2>
                 <section className={styles.entradas}>
-                    { entradas.map( entrada =>(
-                        <Entrada key={ entrada.id } entrada={ entrada } />
+                    { 
+                        entradas.map( entrada =>(
+                            <Entrada key={ entrada.id } entrada={ entrada } />
                         ))
                     }
                 </section>

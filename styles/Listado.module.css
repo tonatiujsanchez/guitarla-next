@@ -1,22 +1,21 @@
-.blog_main {
+.tienda_main {
     margin-top: 10rem;
     margin-bottom: 10rem;
 }
 
-.entradas{
+.listado {
     display: grid;
     gap: 4rem;
 }
 
-
 @media screen and ( min-width: 768px ) {
-    .entradas {
+    .listado {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media screen and ( min-width: 940px ) {
-    .entradas {
+    .listado {
         grid-template-columns: repeat(3, 1fr);
     }
 }

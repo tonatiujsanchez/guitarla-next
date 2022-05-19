@@ -53,7 +53,7 @@ export async function getStaticPaths() {
     const entradas = await resp.json()
 
     const paths = entradas.map( entrada => ({
-        params: { id: entrada.id }
+        params: { url: entrada.url }
     }))
 
     return {
@@ -62,15 +62,15 @@ export async function getStaticPaths() {
     }
 }
 
-export async function getStaticProps({ params:{ id } }) {
+export async function getStaticProps({ params:{ url } }) {
     
-    const url = `${process.env.API_URL}/blogs/${ id }`
-    const resp = await fetch( url )
-    const entrada = await resp.json()
+    const urlBlog = `${process.env.API_URL}/blogs?url=${ url }`
+    const resp = await fetch( urlBlog )
+    const entradas = await resp.json()
 
     return{
         props: {
-            entrada
+            entrada: entradas[0]
         }
     }
 }

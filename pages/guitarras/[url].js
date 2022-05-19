@@ -1,0 +1,44 @@
+import Layout from "../../components/Layout"
+import Image from 'next/image'
+import Link from 'next/link'
+import styles from '../../styles/Guitarra.module.css'
+
+
+const Producto = ({ guitarra }) => {
+    const { descripcion, imagen, nombre, precio } = guitarra
+
+    return (
+        <Layout pagina={`Guitarra ${nombre}`}>
+            <article className={styles.guitarra}>
+                <Image
+                    priority="true"
+                    layout='responsive'
+                    width={180}
+                    height={350}
+                    src={imagen.url}
+                    alt={`Imagen de una guitarra ${nombre}`} />
+                <div className={styles.contenido}>
+                    <h3>{nombre}</h3>
+                    <p className={styles.descripcion}>{descripcion}</p>
+                    <p className={styles.precio}>${precio}</p>
+                </div>
+            </article>
+        </Layout>
+    )
+}
+
+
+export async function getServerSideProps({ query: { url } }) {
+    const urlGuitarra = `${process.env.API_URL}/guitarras?url=${url}`
+    const resp = await fetch(urlGuitarra)
+    const guitarra = await resp.json()
+
+    return {
+        props: {
+            guitarra: guitarra[0]
+        }
+    }
+}
+
+
+export default Producto
