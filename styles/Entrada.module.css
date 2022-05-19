@@ -1,0 +1,51 @@
+.entrada{
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.contenido {
+    padding: 2rem;
+}
+
+.contenido h3 {
+    font-weight: 400;
+    font-size: 2.5rem;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.fecha {
+    font-size: 1.6rem;
+    color: var(--primary);
+    margin-top: 1rem;
+}
+
+.resumen {
+    font-size: 1.8rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;    
+}
+
+.enlace {
+    display: block;
+    margin-top: 2rem;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--negro);
+    border: 2px solid var(--primary);
+    padding: 1.2rem 5rem;
+    transition: all 0.3s ease-out;
+}
+.enlace:hover {
+    background-color: var(--primary);
+    color: var(--blanco);
+}
+
+.texto {
+    white-space: pre-wrap;
+}

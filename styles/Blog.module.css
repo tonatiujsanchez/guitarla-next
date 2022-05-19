@@ -1,0 +1,21 @@
+.blog_main {
+    margin-top: 10rem;
+}
+
+.entradas{
+    display: grid;
+    gap: 4rem;
+}
+
+
+@media screen and ( min-width: 768px ) {
+    .entradas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and ( min-width: 940px ) {
+    .entradas {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

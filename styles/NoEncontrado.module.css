@@ -1,0 +1,22 @@
+.no_encontrado {
+    height: 60rem;
+    display: grid;
+    place-content: center;
+    text-align: center;
+}
+
+.no_encontrado h1{
+    color: var(--negro);
+}
+
+.no_encontrado a {
+    display: block;
+    margin-top: 2rem;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--primary);
+    border: none;
+}

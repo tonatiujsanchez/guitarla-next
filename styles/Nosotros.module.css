@@ -1,0 +1,24 @@
+.nosotros_main{
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+}
+.contenido {
+    display: grid;
+    gap: 4rem;
+}
+
+.contenido p {
+    font-size: 1.7rem;
+}
+
+.contenido p:first-child {
+    margin-top: 0;
+}
+
+
+@media screen and (min-width: 940px) {
+    .contenido {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+    }
+}

@@ -5,7 +5,6 @@ import styles from './../styles/Header.module.css'
 import ActiveLink from './ActiveLink'
 
 
-
 const Header = () => {
 
     const { pathname } = useRouter()
