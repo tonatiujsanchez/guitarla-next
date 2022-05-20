@@ -5,7 +5,7 @@ import styles from './../styles/Header.module.css'
 import ActiveLink from './ActiveLink'
 
 
-const Header = () => {
+const Header = ({ guitarra }) => {
 
     const { pathname } = useRouter()
     
@@ -52,7 +52,31 @@ const Header = () => {
 
                     </nav>
                 </div>
+                { guitarra &&
+                    <div className={ styles.modelo }>
+                        <h1>{`Modelo ${guitarra.nombre}`}</h1>
+                        <p className={styles.descripcion}>{ guitarra.descripcion }</p>
+                        <p className={styles.precio}>${ guitarra.precio }</p>
+                        <Link href={`/guitarras/${guitarra.url}`}>
+                            <a >Ver Guitarra</a>
+                        </Link>
+                    </div>
+                }
             </div>
+            
+            { pathname === '/' && (
+                <div className={ styles.guitarra }>
+                    <Image
+                        priority="true" 
+                        width={400} 
+                        height={900} 
+                        src="/img/header_guitarra.png" 
+                        alt="Imagen de guitarra del encabezado"
+                        title="Imagen de guitarra del encabezado" />
+                </div>
+            )}
+            
+
         </header>
     )
 }

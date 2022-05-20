@@ -1,5 +1,5 @@
-import Entrada from '../components/Entrada';
 import Layout from '../components/Layout'
+import ListadoBlog from '../components/ListadoBlog';
 import styles from '../styles/Blog.module.css'
 
 const Blog = ({ entradas }) => {
@@ -7,14 +7,7 @@ const Blog = ({ entradas }) => {
     return (
         <Layout pagina = 'Blog'>
             <main className={`contenedor ${ styles.blog_main }`}>
-                <h2 className='heading'>Blog</h2>
-                <section className={styles.entradas}>
-                    { 
-                        entradas.map( entrada =>(
-                            <Entrada key={ entrada.id } entrada={ entrada } />
-                        ))
-                    }
-                </section>
+                <ListadoBlog entradas={entradas} titulo="Blog" />
             </main>
         </Layout>
     )

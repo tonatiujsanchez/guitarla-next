@@ -12,8 +12,8 @@ const Guitarra = ({ guitarra }) => {
             <Image 
                 priority="true"
                 layout='responsive' 
-                width={180} 
-                height={350} 
+                width={400} 
+                height={900} 
                 src={imagen.url}
                 alt={`Imagen de una guitarra ${ nombre }`} />
                 <div className={styles.contenido}>

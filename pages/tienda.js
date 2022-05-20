@@ -1,5 +1,5 @@
 import Layout from '../components/Layout'
-import Listado from '../components/Listado';
+import ListadoGuitarras from '../components/ListadoGuitarras';
 import styles from '../styles/Listado.module.css'
 
 
@@ -9,7 +9,7 @@ const Tienda = ({ guitarras }) => {
         <Layout pagina = 'Tienda'>
             <main className={`contenedor ${styles.tienda_main}`}>
                 <h1 className='heading'>Nuestra Colección</h1>
-                <Listado guitarras={ guitarras } />
+                <ListadoGuitarras guitarras={ guitarras } />
             </main>
         </Layout>
     )

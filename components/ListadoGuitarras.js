@@ -1,7 +1,7 @@
 import Guitarra from "./Guitarra";
 import styles from '../styles/Listado.module.css'
 
-const Listado = ({ guitarras }) => {
+const ListadoGuitarras = ({ guitarras }) => {
 
     return (
         <div className={ styles.listado }>
@@ -14,4 +14,4 @@ const Listado = ({ guitarras }) => {
     )
 }
 
-export default Listado
+export default ListadoGuitarras
