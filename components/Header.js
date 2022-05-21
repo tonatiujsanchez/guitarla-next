@@ -32,21 +32,32 @@ const Header = ({ guitarra }) => {
                                     text='Inicio'
                                     href="/" />
                             </li>
-                            <li className={`${pathname === '/nosotros' ? styles.activeLink : undefined}`}>
+                            <li className={`${pathname === '/tienda' ? styles.activeLink : undefined}`}>
                                 <ActiveLink
-                                    text='Nosotros'
-                                    href="/nosotros"/>
-
+                                    text='Tienda'
+                                    href="/tienda" />
+                            </li>
+                            <li className={`${pathname === '/cursos' ? styles.activeLink : undefined}`}>
+                                <ActiveLink
+                                    text='Cursos'
+                                    href="/cursos" />
                             </li>
                             <li className={`${pathname === '/blog' ? styles.activeLink : undefined}`}>
                                 <ActiveLink
                                     text='Blog'
                                     href="/blog" />
                             </li>
-                            <li className={`${pathname === '/tienda' ? styles.activeLink : undefined}`}>
+                            <li className={`${pathname === '/nosotros' ? styles.activeLink : undefined}`}>
                                 <ActiveLink
-                                    text='Tienda'
-                                    href="/tienda" />
+                                    text='Nosotros'
+                                    href="/nosotros"/>
+                            </li>
+                            <li className={`${styles.item_carrito} ${pathname === '/carrito' ? styles.activeLink : undefined}`}>
+                                <Link href="/carrito">
+                                    <a className={styles.item_carrito__enlace}>
+                                        <Image width={30} height={25} src="/img/carrito.png" alt='Imgen carrito de compras' />
+                                    </a>
+                                </Link>
                             </li>
                         </ul>
 

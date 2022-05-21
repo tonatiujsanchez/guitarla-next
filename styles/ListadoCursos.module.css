@@ -1,0 +1,111 @@
+
+.curso {
+    display: grid;
+    margin-bottom: 6rem;
+    padding-bottom: 3rem;
+    border-bottom: solid 1px #CFCFCF;
+}
+.curso:last-child{
+    border-bottom: none;
+}
+.foto {
+    overflow: hidden;
+    align-self: center;
+}
+
+.descripcion {
+    margin-top: 2rem;
+}
+
+.descripcion h3 {
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+    font-weight: 900;
+
+}
+.descripcion .contenido p{
+    font-size: 1.8rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;  
+}
+
+.descripcion .fecha {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.descripcion .instructor {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    font-weight: 900;
+}
+
+.enlace {
+    display: block;
+    margin-top: 1rem;
+    background-color: var(--primary);
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    border: none;
+    color: var(--blanco);
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease-out;
+    text-decoration: none;
+    font-size: 1.8rem;
+    border: 2px solid var(--primary);
+    text-align: center;
+}
+
+.enlace:hover {
+    background: none;
+    color: var(--primary);
+}
+
+.precio {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.precio p:first-child{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 900;
+    font-size: 2.5rem;
+}
+.precio p:last-child{
+    text-decoration: line-through;
+    opacity: 0.5;
+    font-size: 1.8rem;
+}
+
+@media screen and ( min-width: 768px ) { 
+    .curso {
+        grid-template-columns: 2fr 3fr 1fr;
+        gap: 2rem;
+        padding-bottom: 6rem;
+    }
+
+    .descripcion {
+        margin-top: 0;
+    }
+    
+    .precio {
+        flex-direction: column;
+        gap: 0;
+    }
+    .precio p:last-child{
+        margin-top: 0;
+    }
+    .enlace {
+        display: inline-block;
+        padding: 1rem 6rem;
+    }
+}
+

@@ -4,7 +4,7 @@ import { formatearFecha } from "../helpers"
 import styles from '../styles/Entrada.module.css'
 
 const Entrada = ({ entrada }) => {
-    const { id, titulo, resumen, imagen, published_at, url } = entrada
+    const { titulo, resumen, imagen, published_at, url } = entrada
     return (
         <article>
 

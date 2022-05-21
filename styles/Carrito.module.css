@@ -1,0 +1,126 @@
+.carrito_main{
+    margin-top: 10rem;
+}
+
+.contenido {
+    display: grid;
+    gap: 4rem;
+}
+
+.carrito {
+    gap: 4rem;
+}
+
+.producto {
+    position: relative;
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+    gap: 4rem;
+    align-items: center;
+    border-bottom: 1px solid #CFCFCF;
+    padding: 3rem 0;
+}
+
+.producto:last-child {
+    border-bottom: none;
+}
+
+.producto p {
+    margin: 0 1rem 0 0;
+}
+
+.producto .nombre {
+    font-weight: 700;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+.cantidad {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.select {
+    /* all: unset; */
+    /* flex: 1; */
+    border:  1px solid var(--primary);
+    padding: 0.8rem 5rem;
+    text-align: center;
+    border-radius: 0.4rem;
+}
+
+.precio {
+    font-weight: 700;
+    color: var(--primary);
+}
+.precio span {
+    font-size: 2.4rem;
+}
+
+.subtotal {
+    font-weight: 700;
+}
+
+.subtotal span {
+    font-size: 2.4rem;
+}
+
+.eliminar {
+    all: unset;
+    position: absolute;
+    top: 3rem;
+    right: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.eliminar:hover {
+    transform: scale(1.2);
+    color: rgb(219, 35, 35);
+}
+
+/* Resumen */
+
+.resumen {
+    background-color: #F9FAFB;
+    padding: 3rem;
+    border-radius: 1rem;
+}
+
+.resumen h3 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.resumen p {
+    text-align: right;
+}
+
+.btn_pagar {
+    width: 100%;
+    border: none;
+    margin-top: 2rem;
+    background-color: var(--primary);
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    color: var(--blanco);
+    font-weight: 700;
+    transition: background-color 0.3s ease-out;
+    text-decoration: none;
+    font-size: 1.8rem;
+    border: 2px solid var(--primary);
+    cursor: pointer;
+}
+
+.btn_pagar:hover {
+    background-color: #ffa200;
+    border-color: #ffa200;
+}
+
+@media screen and ( min-width: 768px ) {
+    .contenido {
+        grid-template-columns: 3fr 2fr;
+        column-gap: 10rem;
+        align-items: flex-start;
+    }
+}

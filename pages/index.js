@@ -25,18 +25,18 @@ export default function Home({guitarras, curso, entradas}) {
 export async function getServerSideProps() {
 
     const urlGuitarras = `${process.env.API_URL}/guitarras?_limit=6&_sort=createdAt:asc`
-    const urlCursos= `${process.env.API_URL}/cursos`
+    const urlCurso= `${process.env.API_URL}/cursos?_limit=1&_sort=createdAt:asc`
     const urlBlog = `${process.env.API_URL}/blogs?_limit=3`
 
-    const [ respGuitarras, respCursos, respEntradas ] = await Promise.all([
+    const [ respGuitarras, respCurso, respEntradas ] = await Promise.all([
         fetch( urlGuitarras ),
-        fetch( urlCursos ),
+        fetch( urlCurso ),
         fetch( urlBlog ),
     ])
 
     const [ guitarras, curso, entradas ] = await Promise.all([
         respGuitarras.json(),
-        respCursos.json(),
+        respCurso.json(),
         respEntradas.json()
     ])
 
@@ -44,7 +44,7 @@ export async function getServerSideProps() {
     return {
         props: {
             guitarras,
-            curso,
+            curso: curso[0],
             entradas
         }
     }

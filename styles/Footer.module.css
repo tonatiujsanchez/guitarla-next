@@ -1,6 +1,5 @@
 .footer {
     margin-top: 5rem;
-    padding: 5rem 0;
     background-image: linear-gradient( to right, rgb(0 0 0 / .8), rgb( 0 0 0 / .7) ), url(../public/img/cursos_bg.jpg);
     background-size: cover;
     background-position: center;
@@ -10,6 +9,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 5rem 0;
 }
 
 .navegacion {
@@ -42,8 +42,21 @@
     color: var(--blanco);
     text-align: center;
     font-size: 1.5rem;
-    margin-top: 3rem;
+    margin-top: 0;
     margin-bottom: 0;
+}
+
+.copy {
+    border-top: 1px solid var(--negro);
+    padding: 1.5rem 0;
+}
+
+.copy a {
+    color: var(--blanco);
+}
+
+.copy a:hover{
+    color: var(--primary);
 }
 
 @media screen and ( min-width: 768px ) { 
@@ -55,6 +68,5 @@
 
     .copyright {
         font-size: initial;
-        margin-top: 0;
-     }
+    }
 }

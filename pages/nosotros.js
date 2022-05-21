@@ -7,7 +7,7 @@ const Nosotros = () => {
     return (
         <Layout pagina = 'Nosotros'>
             <main className={`contenedor ${ styles.nosotros_main }`}>
-                <h2 className='heading'>Sobre Nosotros</h2>
+                <h1 className='heading'>Sobre Nosotros</h1>
                 <section className={styles.contenido}>
                     <Image
                         layout='responsive' 
