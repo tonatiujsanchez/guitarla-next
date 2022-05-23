@@ -65,6 +65,7 @@ const Header = ({ guitarra }) => {
                 </div>
                 { guitarra &&
                     <div className={ styles.modelo }>
+                        <span className={styles.tag}>Nuevo</span>
                         <h1>{`Modelo ${guitarra.nombre}`}</h1>
                         <p className={styles.descripcion}>{ guitarra.descripcion }</p>
                         <p className={styles.precio}>${ guitarra.precio }</p>

@@ -1,6 +1,7 @@
+import { useEffect, useState } from 'react'
+import NextNProgress from "nextjs-progressbar";
 import '../styles/normalize.css'
 import '../styles/globals.css'
-import { useEffect, useState } from 'react'
 
 const KEY_STORAGE = 'guitarla_carrito_1653095354488'
 
@@ -55,13 +56,18 @@ function MyApp({ Component, pageProps }) {
     }
 
 
-    return <Component 
-                {...pageProps} 
-                carrito={carrito}
-                agregarCarrito={agregarCarrito}
-                actualizarCantidad={actualizarCantidad}
-                eliminarProducto={eliminarProducto}
-                limpiarCarrito={limpiarCarrito} />
+    return (
+        <>
+            <NextNProgress color="#e99401" height={4} />
+            <Component 
+                        {...pageProps} 
+                        carrito={carrito}
+                        agregarCarrito={agregarCarrito}
+                        actualizarCantidad={actualizarCantidad}
+                        eliminarProducto={eliminarProducto}
+                        limpiarCarrito={limpiarCarrito} />
+        </>
+    )
 }
 
 export default MyApp
