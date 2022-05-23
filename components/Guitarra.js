@@ -9,21 +9,23 @@ const Guitarra = ({ guitarra }) => {
     
     return (
         <article className={ styles.guitarra }>
-            <Image 
-                priority="true"
-                layout='responsive' 
-                width={400} 
-                height={900} 
-                src={imagen.url}
-                alt={`Imagen de una guitarra ${ nombre }`} />
-                <div className={styles.contenido}>
-                    <h3>{nombre}</h3>
-                    <p className={styles.descripcion}>{descripcion}</p>
-                    <p className={styles.precio}>${precio}</p>
-                    <Link href={`/guitarras/${url}`}>
-                        <a className={styles.enlace}>Ver Guitarra</a>
-                    </Link>
-                </div>
+            <div className={styles.guitarra_img}>
+                <Image 
+                    priority="true"
+                    width={400} 
+                    height={900} 
+                    src={imagen.url}
+                    alt={`Imagen de una guitarra ${ nombre }`} />
+
+            </div>
+            <div className={styles.contenido}>
+                <h3>{nombre}</h3>
+                <p className={styles.descripcion}>{descripcion}</p>
+                <p className={styles.precio}>${precio}</p>
+                <Link href={`/guitarras/${url}`}>
+                    <a className={styles.enlace}>Ver Guitarra</a>
+                </Link>
+            </div>
         </article>    
     )
 }

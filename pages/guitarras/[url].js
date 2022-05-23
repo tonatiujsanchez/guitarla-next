@@ -32,13 +32,14 @@ const Producto = ({ guitarra, agregarCarrito }) => {
         <Layout pagina={`Guitarra ${nombre}`}>
             <main className={styles.guitarra_main}>
                 <article className={styles.guitarra}>
+                <div className={styles.guitarra_img}>
                     <Image
                         priority="true"
-                        layout='responsive'
-                        width={180}
-                        height={350}
+                        width={400}
+                        height={900}
                         src={imagen.url}
                         alt={`Imagen de una guitarra ${nombre}`} />
+                </div>
                     <div className={styles.contenido}>
                         <h3>{nombre}</h3>
                         <p className={styles.descripcion}>{descripcion}</p>

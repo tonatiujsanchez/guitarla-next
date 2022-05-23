@@ -2,6 +2,45 @@
     margin-top: 10rem;
 }
 
+
+/* SIN PRIDUCTOS */
+.sin_productos {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20rem;
+    margin-top: 10rem;
+}
+
+.sin_productos .sin_productos_img {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.sin_productos h3{
+    font-size: 4rem;
+    margin-top: 0;
+    opacity: 0.5;
+}
+
+
+/* COMPRA EXITOSA */
+
+.compra_exitosa .compra_exitosa_img{
+    max-width: 20rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.compra_exitosa h3{
+    color: var(--negro);
+    opacity: 1;
+}
+.compra_exitosa a{
+    display: inline-block;
+    width: auto;
+}
+/* CONTENIDO */
+
 .contenido {
     display: grid;
     gap: 4rem;
@@ -92,8 +131,17 @@
     text-align: center;
 }
 
+.resumen div {
+    border-bottom: 1px solid #d3d3d3;
+}
+
 .resumen p {
-    text-align: right;
+    display: flex;
+    justify-content: space-between;
+}
+
+.total_pagar {
+    font-weight: bold;
 }
 
 .btn_pagar {
@@ -102,7 +150,7 @@
     margin-top: 2rem;
     background-color: var(--primary);
     text-transform: uppercase;
-    padding: 1rem 2rem;
+    padding: 1.7rem 2rem;
     color: var(--blanco);
     font-weight: 700;
     transition: background-color 0.3s ease-out;
@@ -117,10 +165,32 @@
     border-color: #ffa200;
 }
 
+.btn_pagar:disabled {
+    background-color: #e7aa3f;
+    border-color: #e7aa3f;
+    opacity: 0.7;
+    cursor: auto;
+}
+
+.btn_pagar:disabled:hover {
+    background-color: #e7aa3f;
+    border-color: #e7aa3f;
+}
+
+.btn_pagar div{
+    margin: 0 auto;
+    width: 20px;
+    height: 20px;
+}
+
 @media screen and ( min-width: 768px ) {
     .contenido {
         grid-template-columns: 3fr 2fr;
         column-gap: 10rem;
         align-items: flex-start;
     }
+    .sin_productos h3 {
+        font-size: 4.5rem;
+    }
+    
 }

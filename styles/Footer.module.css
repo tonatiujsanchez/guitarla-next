@@ -47,8 +47,8 @@
 }
 
 .copy {
-    border-top: 1px solid var(--negro);
-    padding: 1.5rem 0;
+    border-top: 1px solid rgb( 255 255 255 / 0.2);
+    padding: 1.8rem 0;
 }
 
 .copy a {
