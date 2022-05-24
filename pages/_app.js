@@ -7,7 +7,9 @@ const KEY_STORAGE = 'guitarla_carrito_1653095354488'
 
 function MyApp({ Component, pageProps }) {
 
+    
     const [carrito, setCarrito] = useState([])
+
 
     useEffect(()=>{
         const carritoLS = JSON.parse( localStorage.getItem(KEY_STORAGE) ) ?? []
@@ -16,9 +18,11 @@ function MyApp({ Component, pageProps }) {
         }
     },[])
 
+
     useEffect(()=>{
         localStorage.setItem(KEY_STORAGE, JSON.stringify(carrito))
     }, [carrito])
+
 
     const agregarCarrito = ( productoNuevo ) => {
 

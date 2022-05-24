@@ -1,0 +1,125 @@
+.curso_encabezado {
+    display: grid;
+}
+
+.curso_contenido {
+    margin-top: 5rem;
+}
+
+.curso_contenido_img {
+    border-radius: 0.5rem 0.5rem 0 0;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.curso_precio {
+    border: 1px solid #CFCFCF;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.curso_precio p {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 1rem 2rem;
+}
+
+.curso_precio p span {
+    font-weight: 900;
+    font-size: 2.6rem;
+}
+
+.curso_contenido_btn {
+    width: 100%;
+    border: 2px solid var(--primary);
+    padding: 2rem 2rem;
+    border-radius: 0.5rem;
+    background-color: var(--primary);
+    color: var(--blanco);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.curso_contenido_btn:hover {
+    background: none;
+    color: var(--primary);
+}
+
+/*  */
+
+.curso_titulo {
+    margin: 2rem 0;
+    line-height: 4.5rem;
+    font-size: 3.8rem;
+}
+
+.curso_descripcion_contenido {
+    opacity: 0.9;
+}
+
+.curso_actualizacion {
+    display: flex;
+    flex-direction: column;
+    background-color: #F6F7F9;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.curso_actualizacion p {
+    margin: 0.5rem 0;
+    vertical-align: middle;
+}
+
+.curso_actualizacion p:first-child {
+    font-weight: bold;
+}
+.curso_actualizacion p:first-child span{ 
+    vertical-align: top;
+}
+
+.curso_actualizacion p:last-of-type{
+    opacity: 0.7;
+}
+
+.curso_actualizacion_alumnos {
+    margin-left: 1rem;
+}
+
+.descripcion {
+    margin-top: 5rem;
+    max-width: 100%;
+}
+
+.descripcion h3{
+    font-size: 3rem;
+}
+
+@media screen and ( min-width: 768px ) {
+    .curso_encabezado {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "descripcion descripcion contenido";
+        gap: 4rem;
+        margin-top: 5rem;
+    }
+
+    .curso_contenido {
+        grid-area: contenido;
+        margin-top: 2rem;
+    }
+
+    .curso_descripcion {
+        grid-area: descripcion;
+    }
+
+    .descripcion {
+        margin-top: 10rem;
+    }
+}
+
+@media screen and ( min-width: 900px ) {
+    .curso_actualizacion {
+        flex-direction: row;
+        gap: 4rem;
+    }
+}

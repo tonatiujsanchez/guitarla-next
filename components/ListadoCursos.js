@@ -21,9 +21,9 @@ const ListadoCursos = ({ cursos }) => {
                         <div className={styles.descripcion}>
                             <h3>{ curso.titulo }</h3>
                             <ReactMarkdown className={ styles.contenido } >{ curso.contenido }</ReactMarkdown>
-                            <p className={ styles.fecha }>Última actualización: { formatearFecha( curso.published_at ) }</p>
+                            <p className={ styles.fecha }>Última actualización: { formatearFecha( curso.updatedAt ) }</p>
                             <p className={ styles.instructor }>Por: { curso.instructor }</p>
-                            <Link href={`/curso/${curso.url}`}>
+                            <Link href={`/cursos/${curso.url}`}>
                                 <a className={styles.enlace}>Ver Curso</a>
                             </Link>
                         </div>

@@ -20,7 +20,7 @@ const Carrito = ({ carrito, actualizarCantidad, eliminarProducto, limpiarCarrito
         }, 2000);
     }
 
-
+    console.log(carrito);
 
     useEffect(()=>{
         const totalAPagar = carrito.reduce( ( total, producto )=>{
@@ -52,7 +52,7 @@ const Carrito = ({ carrito, actualizarCantidad, eliminarProducto, limpiarCarrito
                                         <div>
                                             <p className={styles.nombre}>{producto.nombre}</p>
                                             <div className={styles.cantidad}>
-                                                <p>Cantidad:</p>
+                                                <p>Cantidad: </p>
                                                 <select 
                                                     value={producto.cantidad} 
                                                     onChange={e => actualizarCantidad( producto.id, Number(e.target.value) )}
