@@ -1,0 +1,38 @@
+.notificacion {
+    position: fixed;
+    top: 10rem;
+    left: calc(50% - 148px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border-bottom: 3px solid #16C60C;
+    background-color: var(--blanco);
+    padding: 1.2rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 1.8rem;
+    box-shadow: 2px 5px 30px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    animation: noti;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+}
+
+.notificacion p {
+    margin: 0;
+}
+
+@keyframes noti {
+    0% {
+        transform: translateY(-15rem);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+  
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

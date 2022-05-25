@@ -14,7 +14,6 @@
 
 .curso_precio {
     border: 1px solid #CFCFCF;
-    border-radius: 0.5rem;
     margin-bottom: 2rem;
 }
 
@@ -34,11 +33,11 @@
     width: 100%;
     border: 2px solid var(--primary);
     padding: 2rem 2rem;
-    border-radius: 0.5rem;
     background-color: var(--primary);
     color: var(--blanco);
     cursor: pointer;
     font-weight: bold;
+    transition: all 0.3s ease-out;
 }
 
 .curso_contenido_btn:hover {

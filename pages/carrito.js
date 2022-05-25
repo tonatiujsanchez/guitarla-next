@@ -20,8 +20,6 @@ const Carrito = ({ carrito, actualizarCantidad, eliminarProducto, limpiarCarrito
         }, 2000);
     }
 
-    console.log(carrito);
-
     useEffect(()=>{
         const totalAPagar = carrito.reduce( ( total, producto )=>{
             return total + (producto.precio * producto.cantidad) 
@@ -32,19 +30,18 @@ const Carrito = ({ carrito, actualizarCantidad, eliminarProducto, limpiarCarrito
     return (
         <Layout pagina="Carrito">
             <main className={`contenedor ${styles.carrito_main}`}>
-                <h1 className="heading">Carrito</h1>   
+                {!pagado && <h1 className="heading">Carrito</h1>}   
                 {!pagado ? (
                     carrito.length > 0
                     ?<div className={styles.contenido}>
                         <div className={styles.carrito}>
                             <h2>Árticulos</h2>
                             { carrito.map(producto => (
-                                    <div key={producto.id} className={styles.producto}>
-                                        <div>
+                                    <div key={producto.id} className={`${styles.producto} ${producto.tipo === 'curso' ? styles.producto_curso: null}`}>
+                                        <div className={producto.tipo === 'guitarra' ? styles.producto_img: null}>
                                             <Image
-                                                layout="responsive"
-                                                width={400}
-                                                height={900}
+                                                width={producto.tipo === 'guitarra' ? 400 : 800}
+                                                height={producto.tipo === 'guitarra' ? 900: 600}
                                                 src={producto.imagen}
                                                 alt={`Guitarra ${producto.nombre}`}
                                                 title={`Guitarra ${producto.nombre}`} />
@@ -53,20 +50,22 @@ const Carrito = ({ carrito, actualizarCantidad, eliminarProducto, limpiarCarrito
                                             <p className={styles.nombre}>{producto.nombre}</p>
                                             <div className={styles.cantidad}>
                                                 <p>Cantidad: </p>
-                                                <select 
-                                                    value={producto.cantidad} 
-                                                    onChange={e => actualizarCantidad( producto.id, Number(e.target.value) )}
-                                                    className={ styles.select } >
+                                                { producto.tipo === 'guitarra'
+                                                    ?<select 
+                                                        value={producto.cantidad} 
+                                                        onChange={e => actualizarCantidad( producto.id, Number(e.target.value) )}
+                                                        className={ styles.select } >
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                    </select>
+                                                : <p className={ styles.select }> 1 </p>
+                                                }
 
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
-                                                    <option value="6">6</option>
-                                                    <option value="7">7</option>
-                                                    
-                                                </select>
                                             </div>
                                             <p className={styles.precio}>
                                                 $ <span>{producto.precio}</span>

@@ -2,11 +2,13 @@ import Layout from "../../components/Layout"
 import Image from 'next/image'
 import styles from '../../styles/Guitarra.module.css'
 import { useState } from "react"
+import Notificacion from "../../components/Notificacion"
 
 
 const Producto = ({ guitarra, agregarCarrito }) => {
 
     const [cantidad, setCantidad] = useState(1)
+    const [mostrarNotificacion, setMostrarNotificacion] = useState(false)
 
     const { descripcion, imagen, nombre, precio, id } = guitarra
 
@@ -27,10 +29,16 @@ const Producto = ({ guitarra, agregarCarrito }) => {
             tipo: 'guitarra'
         }
         agregarCarrito(guitarraSeleccionada)
+
+        setMostrarNotificacion(true)
+        setTimeout(() => {
+            setMostrarNotificacion(false)
+        }, 2000);
     }
 
     return (
         <Layout pagina={`Guitarra ${nombre}`}>
+            { mostrarNotificacion && <Notificacion producto='Guitarra agregada' /> }
             <main className={styles.guitarra_main}>
                 <article className={styles.guitarra}>
                 <div className={styles.guitarra_img}>
@@ -39,7 +47,8 @@ const Producto = ({ guitarra, agregarCarrito }) => {
                         width={400}
                         height={900}
                         src={imagen.url}
-                        alt={`Imagen de una guitarra ${nombre}`} />
+                        alt={`Imagen de una guitarra ${nombre}`}
+                        title={`Imagen de una guitarra ${nombre}`} />
                 </div>
                     <div className={styles.contenido}>
                         <h3>{nombre}</h3>

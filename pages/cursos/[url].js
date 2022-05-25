@@ -1,13 +1,17 @@
 import Image from 'next/image'
+import { useState } from 'react';
 import ReactMarkdown from 'react-markdown'
 import Layout from '../../components/Layout'
+import Notificacion from '../../components/Notificacion';
 import { formatearFecha } from '../../helpers';
 import styles from '../../styles/CursoDetalles.module.css'
 
 const CursoDetalles = ({ curso, agregarCarrito }) => {
     const { id, titulo, contenido, imagen, precio, alumnos, instructor, descripcion, updatedAt } = curso
+    const [mostrarNotificacion, setMostrarNotificacion] = useState(false)
 
     const addCarrito = () => {
+        setMostrarNotificacion(false)
         const CursoSeleccionada = {
             id,
             imagen: imagen.url,
@@ -17,9 +21,15 @@ const CursoDetalles = ({ curso, agregarCarrito }) => {
             tipo: 'curso'
         }
         agregarCarrito(CursoSeleccionada)
+        setMostrarNotificacion(true)
+
+        setTimeout(() => {
+            setMostrarNotificacion(false)
+        }, 2000);
     }
     return (
         <Layout pagina={titulo}>
+            { mostrarNotificacion && <Notificacion producto='Curso agregado' /> }
             <article className="contenedor">
                 <section className={styles.curso_encabezado}>
                     <div className={styles.curso_contenido}>
@@ -52,7 +62,9 @@ const CursoDetalles = ({ curso, agregarCarrito }) => {
                                     <Image
                                         width={24} 
                                         height={24}
-                                        src='/img/user.png' />
+                                        src='/img/user.png'
+                                        alt={`Icono de persona`}
+                                        title={`Icono de persona`} />
                                     <span className={styles.curso_actualizacion_alumnos}>{alumnos} Estudiantes</span></p>
                                 <p>Actualizado el { formatearFecha(updatedAt) }</p>
                             </div>

@@ -8,20 +8,42 @@
 
 .navbar {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    gap: 10rem;
 }
 
 .navegacion {
-    margin-top: 4rem;
     display: flex;
+    justify-content: center;
     position: relative;
     z-index: 1;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 80%;
+    background-color: black;
+    padding: 10rem 0;
+    transform: translateX(100%);
+    transition: all 0.3s ease-out;
 }
+
+.navegacion.mostrarMenu { 
+    transform: translateX(0);
+}
+
+
 .navlist{
     display: flex;
     align-items: center;
     gap: 2rem;
+    flex-direction: column;
+}
+
+.navlist li{
+    padding: 1rem;
 }
 .navegacion a {
     display: inline-block;
@@ -48,6 +70,18 @@
     display: grid;
     place-content: center;
     padding: 8px 10px;
+}
+
+.menu_btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.menu_btn_cerrar {
+    position: absolute;
+    top: 5rem;
+    right: 3rem;
 }
 
 /*  */
@@ -119,6 +153,9 @@
 }
 
 @media screen and ( min-width: 500px ) { 
+    .navegacion {
+        width: 60%;
+    }
     .navegacion a {
         font-size: 1.6rem;
         padding: 0.4rem 1rem;
@@ -126,15 +163,31 @@
 }
 
 @media screen and ( min-width: 768px ) {
-    /* .navbar {
-        flex-direction: row;
-        justify-content: space-between;
+    .navbar {
+        flex-direction: column;
         align-items: center;
-    } */
+        gap: 0;
+    }
 
-    /* .navegacion {
-        margin-top: 0;
-    } */
+    .navegacion {
+        position: relative;
+        transform: translateX(0);
+        background: none;
+        padding: 0;
+        margin-top: 4rem;
+        width: 100%;
+    }
+
+    .navlist{ 
+        flex-direction: row;
+
+    }
+
+    .menu_btn {
+        display: none;
+    }
+
+    
 }
 
 @media screen and ( min-width: 1000px ) {
@@ -146,6 +199,7 @@
 
     .navegacion {
         margin-top: 0;
+        justify-content: flex-end;
     }
 
     .modelo {
