@@ -53,7 +53,7 @@ const Carrito = ({ carrito, actualizarCantidad, eliminarProducto, limpiarCarrito
                                                 { producto.tipo === 'guitarra'
                                                     ?<select 
                                                         value={producto.cantidad} 
-                                                        onChange={e => actualizarCantidad( producto.id, Number(e.target.value) )}
+                                                        onChange={e => actualizarCantidad( producto._id, Number(e.target.value) )}
                                                         className={ styles.select } >
                                                         <option value="1">1</option>
                                                         <option value="2">2</option>
@@ -77,7 +77,7 @@ const Carrito = ({ carrito, actualizarCantidad, eliminarProducto, limpiarCarrito
                                         <button 
                                             type="button" 
                                             className={styles.eliminar}
-                                            onClick={ ()=> eliminarProducto( producto.id ) } >
+                                            onClick={ ()=> eliminarProducto( producto._id ) } >
                                             X
                                         </button>
                                     </div>
@@ -106,7 +106,12 @@ const Carrito = ({ carrito, actualizarCantidad, eliminarProducto, limpiarCarrito
                     </div>
                     : <div className={styles.sin_productos}>
                         <div className={styles.sin_productos_img}>
-                            <Image width={744} height={622} src="/img/carrito-page.png" />
+                            <Image 
+                                width={744} 
+                                height={622} 
+                                src="/img/carrito-page.png"
+                                alt="Imagen de carrito de compras"
+                                title="Imagen de carrito de compras" />
                         </div>
                         <h3>Tu carrito está vacío</h3>
                         <Link href={`/tienda`}>
@@ -119,7 +124,9 @@ const Carrito = ({ carrito, actualizarCantidad, eliminarProducto, limpiarCarrito
                                 priority="true" 
                                 width={400} 
                                 height={400} 
-                                src="/img/check-exit.png" />
+                                src="/img/check-exit.png"
+                                alt="Icono de compra exitosa"
+                                title="Icono de compra exitosa" />
                                 
                         </div>
                         <h3>Gracias por su compra</h3>

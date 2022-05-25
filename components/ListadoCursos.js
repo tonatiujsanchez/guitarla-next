@@ -9,7 +9,7 @@ const ListadoCursos = ({ cursos }) => {
         <section>
             {
                 cursos.map(curso => (
-                    <article key={curso.id} className={styles.curso}>
+                    <article key={curso._id} className={styles.curso}>
                         <div className={ styles.foto }>
                             <Image 
                                 width={800}

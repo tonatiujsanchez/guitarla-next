@@ -43,7 +43,7 @@ const Footer = () => {
                 </nav>
             </div>
             <div className={styles.copy}>
-                <p className={styles.copyright}>©  { new Date().getFullYear() } <a target="_blank" href="https://twitter.com/tonatiujsanchez">Tonatiuj Sánchez</a>. Todos los derechos reservados.</p>
+                <p className={styles.copyright}>©  { new Date().getFullYear() } <a target="_blank" rel="noreferrer" href="https://twitter.com/tonatiujsanchez">Tonatiuj Sánchez</a>. Todos los derechos reservados.</p>
             </div>
         </footer>
     )

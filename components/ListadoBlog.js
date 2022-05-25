@@ -8,7 +8,7 @@ const ListadoBlog = ({ entradas, titulo }) => {
             <div className={`contenedor ${styles.entradas}`}>
                 {
                     entradas.map(entrada => (
-                        <Entrada key={entrada.id} entrada={entrada} />
+                        <Entrada key={entrada._id} entrada={entrada} />
                     ))
                 }
             </div>
