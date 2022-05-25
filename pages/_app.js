@@ -75,12 +75,3 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp
-
-
-// ===Strapi===
-// guitarlanext@gmail.com
-// Guitarlanext-pwd123
-
-// ===Mongo===
-// tonatiujdev
-// _manager.db
