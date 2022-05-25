@@ -53,7 +53,7 @@ const Carrito = ({ carrito, actualizarCantidad, eliminarProducto, limpiarCarrito
                                                 { producto.tipo === 'guitarra'
                                                     ?<select 
                                                         value={producto.cantidad} 
-                                                        onChange={e => actualizarCantidad( producto._id, Number(e.target.value) )}
+                                                        onChange={e => actualizarCantidad( producto.id, Number(e.target.value) )}
                                                         className={ styles.select } >
                                                         <option value="1">1</option>
                                                         <option value="2">2</option>
@@ -77,7 +77,7 @@ const Carrito = ({ carrito, actualizarCantidad, eliminarProducto, limpiarCarrito
                                         <button 
                                             type="button" 
                                             className={styles.eliminar}
-                                            onClick={ ()=> eliminarProducto( producto._id ) } >
+                                            onClick={ ()=> eliminarProducto( producto.id ) } >
                                             X
                                         </button>
                                     </div>

@@ -42,7 +42,7 @@ function MyApp({ Component, pageProps }) {
     const actualizarCantidad = ( idProducto, cantidad ) => {
         
         const carritoActualizado = carrito.map( producto => (
-            producto._id === idProducto ? { ...producto, cantidad } : producto
+            producto.id === idProducto ? { ...producto, cantidad } : producto
         ))
 
         setCarrito([ ...carritoActualizado ])
@@ -50,7 +50,7 @@ function MyApp({ Component, pageProps }) {
 
 
     const eliminarProducto = ( idProducto ) => {
-        const carritoActualizado = carrito.filter( producto => producto._id !== idProducto)
+        const carritoActualizado = carrito.filter( producto => producto.id !== idProducto)
         setCarrito([ ...carritoActualizado ])
     }
 
